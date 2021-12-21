@@ -1,0 +1,38 @@
+<div>
+    <h3>Pending Tickets</h3>
+  
+      <table align="center" border="1">
+        <tr>
+          <th>Ticket ID</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Train Name</th>
+          <th>Pass. Num</th>
+          <th>Coach Type</th>
+          <th>Sit-01</th>
+          <th>Sit-02</th>
+          <th>Sit-03</th>
+          <th>Sit-04</th>
+          <th>Cost</th>
+    
+          
+          
+        </tr>
+        <tr ng-repeat="p in PendingTicket">
+            <td>{{p.Tkt_ID}}</td>
+            <td>{{p.Start_Station}}</td>
+            <td>{{p.End_Station}}</td>
+            <td>{{p.Date}}</td>
+            <td>{{p.Time}}</td>
+            <td>{{p.Train_Name}}</td>
+            <td>{{p.Psn_Num}}</td>
+            <td>{{p.Coach_Num}}</td>
+            <td>{{p.Sit_01}}</td>
+            <td>{{p.Sit_02}}</td>
+            <td>{{p.Sit_03}}</td>
+            <td>{{p.Sit_04}}</td>
+            <td>{{p.Cost}}</td>
+        </tr>
+      </table>

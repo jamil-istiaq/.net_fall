@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2657f14bc8ed4c6a9dfdd52dcf808b6f" Name="Diagram1">
+        <EntityTypeShape EntityType="API_MASModel.EM_Info" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Fair_Chart" Width="1.5" PointX="8" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Payment_Info" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Pending_Tickets" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Route_List" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Salary_Info" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Token" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Token_Info" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Train_List" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Train_Schedule" Width="1.5" PointX="11" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.User_Info" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="API_MASModel.Purchase_Tickets" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="API_MASModel.FK_EM_Info_User_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Fair_Chart_Route_List" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Payment_Info_User_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Pending_Tickets_User_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Purchase_Tickets_Pending_Tickets" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Train_Schedule_Route_List" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Salary_Info_User_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Token_User_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Token_Info_User_Info" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Train_Schedule_Train_List" ManuallyRouted="false" />
+        <AssociationConnector Association="API_MASModel.FK_Purchase_Tickets_User_Info" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

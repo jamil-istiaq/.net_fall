@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="API_MASModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EM_Info">
+    <Key>
+      <PropertyRef Name="Message_ID" />
+    </Key>
+    <Property Name="Message_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Msg_Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Station_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User_Info" Relationship="Self.FK_EM_Info_User_Info" FromRole="EM_Info" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Fair_Chart">
+    <Key>
+      <PropertyRef Name="Fair_ID" />
+    </Key>
+    <Property Name="Fair_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Route_ID" Type="Int32" Nullable="false" />
+    <Property Name="Station_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Route_List" Relationship="Self.FK_Fair_Chart_Route_List" FromRole="Fair_Chart" ToRole="Route_List" />
+  </EntityType>
+  <EntityType Name="Payment_Info">
+    <Key>
+      <PropertyRef Name="Payment_ID" />
+    </Key>
+    <Property Name="Payment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Tkt_ID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Payment_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User_Info" Relationship="Self.FK_Payment_Info_User_Info" FromRole="Payment_Info" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Pending_Tickets">
+    <Key>
+      <PropertyRef Name="Tkt_ID" />
+    </Key>
+    <Property Name="Tkt_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Start_Station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="End_Station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Train_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Psn_Num" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Psn_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Coach_Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Coach_Num" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sit_01" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sit_02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sit_03" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sit_04" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User_Info" Relationship="Self.FK_Pending_Tickets_User_Info" FromRole="Pending_Tickets" ToRole="User_Info" />
+    <NavigationProperty Name="Purchase_Tickets" Relationship="Self.FK_Purchase_Tickets_Pending_Tickets" FromRole="Pending_Tickets" ToRole="Purchase_Tickets" />
+  </EntityType>
+  <EntityType Name="Route_List">
+    <Key>
+      <PropertyRef Name="Route_ID" />
+    </Key>
+    <Property Name="Route_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Route_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Route_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SM_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Fair_Chart" Relationship="Self.FK_Fair_Chart_Route_List" FromRole="Route_List" ToRole="Fair_Chart" />
+    <NavigationProperty Name="Train_Schedule" Relationship="Self.FK_Train_Schedule_Route_List" FromRole="Route_List" ToRole="Train_Schedule" />
+  </EntityType>
+  <EntityType Name="Salary_Info">
+    <Key>
+      <PropertyRef Name="Salary_ID" />
+    </Key>
+    <Property Name="Salary_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Salary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User_Info" Relationship="Self.FK_Salary_Info_User_Info" FromRole="Salary_Info" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="AccessToken" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatAt" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ExpireAt" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="User_Info" Relationship="Self.FK_Token_User_Info" FromRole="Token" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Token_Info">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Token" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User_Info" Relationship="Self.FK_Token_Info_User_Info" FromRole="Token_Info" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Train_List">
+    <Key>
+      <PropertyRef Name="Train_ID" />
+    </Key>
+    <Property Name="Train_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Train_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Start_Station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="End_Station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Train_Master" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Train_Schedule" Relationship="Self.FK_Train_Schedule_Train_List" FromRole="Train_List" ToRole="Train_Schedule" />
+  </EntityType>
+  <EntityType Name="Train_Schedule">
+    <Key>
+      <PropertyRef Name="Schedule_ID" />
+    </Key>
+    <Property Name="Schedule_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Route_ID" Type="Int32" Nullable="false" />
+    <Property Name="Route_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Train_ID" Type="Int32" Nullable="false" />
+    <Property Name="Train_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Start_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="End_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Route_List" Relationship="Self.FK_Train_Schedule_Route_List" FromRole="Train_Schedule" ToRole="Route_List" />
+    <NavigationProperty Name="Train_List" Relationship="Self.FK_Train_Schedule_Train_List" FromRole="Train_Schedule" ToRole="Train_List" />
+  </EntityType>
+  <EntityType Name="User_Info">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EM_Info" Relationship="Self.FK_EM_Info_User_Info" FromRole="User_Info" ToRole="EM_Info" />
+    <NavigationProperty Name="Payment_Info" Relationship="Self.FK_Payment_Info_User_Info" FromRole="User_Info" ToRole="Payment_Info" />
+    <NavigationProperty Name="Pending_Tickets" Relationship="Self.FK_Pending_Tickets_User_Info" FromRole="User_Info" ToRole="Pending_Tickets" />
+    <NavigationProperty Name="Salary_Info" Relationship="Self.FK_Salary_Info_User_Info" FromRole="User_Info" ToRole="Salary_Info" />
+    <NavigationProperty Name="Tokens" Relationship="Self.FK_Token_User_Info" FromRole="User_Info" ToRole="Token" />
+    <NavigationProperty Name="Token_Info" Relationship="Self.FK_Token_Info_User_Info" FromRole="User_Info" ToRole="Token_Info" />
+    <NavigationProperty Name="Purchase_Tickets" Relationship="Self.FK_Purchase_Tickets_User_Info" FromRole="User_Info" ToRole="Purchase_Tickets" />
+  </EntityType>
+  <EntityType Name="Purchase_Tickets">
+    <Key>
+      <PropertyRef Name="Tkt_ID" />
+      <PropertyRef Name="User_ID" />
+      <PropertyRef Name="Start_Station" />
+      <PropertyRef Name="End_Station" />
+      <PropertyRef Name="Time" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Train_Name" />
+      <PropertyRef Name="Coach_Number" />
+      <PropertyRef Name="Sit_01" />
+      <PropertyRef Name="Sit_02" />
+      <PropertyRef Name="Sit_03" />
+      <PropertyRef Name="Sit_04" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Tkt_ID" Type="Int32" Nullable="false" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <Property Name="Start_Station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="End_Station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Train_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Coach_Number" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sit_01" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sit_02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sit_03" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sit_04" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Pending_Tickets" Relationship="Self.FK_Purchase_Tickets_Pending_Tickets" FromRole="Purchase_Tickets" ToRole="Pending_Tickets" />
+    <NavigationProperty Name="User_Info" Relationship="Self.FK_Purchase_Tickets_User_Info" FromRole="Purchase_Tickets" ToRole="User_Info" />
+  </EntityType>
+  <Association Name="FK_EM_Info_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="1" />
+    <End Role="EM_Info" Type="Self.EM_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="EM_Info">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fair_Chart_Route_List">
+    <End Role="Route_List" Type="Self.Route_List" Multiplicity="1" />
+    <End Role="Fair_Chart" Type="Self.Fair_Chart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route_List">
+        <PropertyRef Name="Route_ID" />
+      </Principal>
+      <Dependent Role="Fair_Chart">
+        <PropertyRef Name="Route_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Info_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="1" />
+    <End Role="Payment_Info" Type="Self.Payment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Payment_Info">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pending_Tickets_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="1" />
+    <End Role="Pending_Tickets" Type="Self.Pending_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Pending_Tickets">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Tickets_Pending_Tickets">
+    <End Role="Pending_Tickets" Type="Self.Pending_Tickets" Multiplicity="1" />
+    <End Role="Purchase_Tickets" Type="Self.Purchase_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pending_Tickets">
+        <PropertyRef Name="Tkt_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Tickets">
+        <PropertyRef Name="Tkt_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Train_Schedule_Route_List">
+    <End Role="Route_List" Type="Self.Route_List" Multiplicity="1" />
+    <End Role="Train_Schedule" Type="Self.Train_Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route_List">
+        <PropertyRef Name="Route_ID" />
+      </Principal>
+      <Dependent Role="Train_Schedule">
+        <PropertyRef Name="Route_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salary_Info_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="1" />
+    <End Role="Salary_Info" Type="Self.Salary_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Salary_Info">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Token_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="1" />
+    <End Role="Token" Type="Self.Token" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Token">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Token_Info_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="1" />
+    <End Role="Token_Info" Type="Self.Token_Info" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Token_Info">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Train_Schedule_Train_List">
+    <End Role="Train_List" Type="Self.Train_List" Multiplicity="1" />
+    <End Role="Train_Schedule" Type="Self.Train_Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Train_List">
+        <PropertyRef Name="Train_ID" />
+      </Principal>
+      <Dependent Role="Train_Schedule">
+        <PropertyRef Name="Train_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Tickets_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="1" />
+    <End Role="Purchase_Tickets" Type="Self.Purchase_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Tickets">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="API_MASEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EM_Info" EntityType="Self.EM_Info" />
+    <EntitySet Name="Fair_Chart" EntityType="Self.Fair_Chart" />
+    <EntitySet Name="Payment_Info" EntityType="Self.Payment_Info" />
+    <EntitySet Name="Pending_Tickets" EntityType="Self.Pending_Tickets" />
+    <EntitySet Name="Route_List" EntityType="Self.Route_List" />
+    <EntitySet Name="Salary_Info" EntityType="Self.Salary_Info" />
+    <EntitySet Name="Tokens" EntityType="Self.Token" />
+    <EntitySet Name="Token_Info" EntityType="Self.Token_Info" />
+    <EntitySet Name="Train_List" EntityType="Self.Train_List" />
+    <EntitySet Name="Train_Schedule" EntityType="Self.Train_Schedule" />
+    <EntitySet Name="User_Info" EntityType="Self.User_Info" />
+    <EntitySet Name="Purchase_Tickets" EntityType="Self.Purchase_Tickets" />
+    <AssociationSet Name="FK_EM_Info_User_Info" Association="Self.FK_EM_Info_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="EM_Info" EntitySet="EM_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fair_Chart_Route_List" Association="Self.FK_Fair_Chart_Route_List">
+      <End Role="Route_List" EntitySet="Route_List" />
+      <End Role="Fair_Chart" EntitySet="Fair_Chart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Info_User_Info" Association="Self.FK_Payment_Info_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Payment_Info" EntitySet="Payment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pending_Tickets_User_Info" Association="Self.FK_Pending_Tickets_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Pending_Tickets" EntitySet="Pending_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Tickets_Pending_Tickets" Association="Self.FK_Purchase_Tickets_Pending_Tickets">
+      <End Role="Pending_Tickets" EntitySet="Pending_Tickets" />
+      <End Role="Purchase_Tickets" EntitySet="Purchase_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Train_Schedule_Route_List" Association="Self.FK_Train_Schedule_Route_List">
+      <End Role="Route_List" EntitySet="Route_List" />
+      <End Role="Train_Schedule" EntitySet="Train_Schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salary_Info_User_Info" Association="Self.FK_Salary_Info_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Salary_Info" EntitySet="Salary_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Token_User_Info" Association="Self.FK_Token_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Token" EntitySet="Tokens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Token_Info_User_Info" Association="Self.FK_Token_Info_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Token_Info" EntitySet="Token_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Train_Schedule_Train_List" Association="Self.FK_Train_Schedule_Train_List">
+      <End Role="Train_List" EntitySet="Train_List" />
+      <End Role="Train_Schedule" EntitySet="Train_Schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Tickets_User_Info" Association="Self.FK_Purchase_Tickets_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Purchase_Tickets" EntitySet="Purchase_Tickets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

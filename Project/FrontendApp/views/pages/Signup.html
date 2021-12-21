@@ -1,0 +1,77 @@
+<h3>Sign Up</h3>
+
+<form ng-submit="submit()">
+    <table align="center">
+        <tr>
+            <td align="right">
+                Name:
+            </td>
+            <td>
+                <input type="text" ng-model="Name" placeholder="Enter Full Name" required>
+                <input type="hidden" ng-model="User_ID">
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Email:
+            </td>
+            <td>
+                <input type="email" ng-model="Email" placeholder="Enter Email" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Password:
+            </td>
+            <td>
+                <input type="password" ng-model="Password" placeholder="Enter Password" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Phone:
+            </td>
+            <td>
+                <input type="text" ng-model="Phone" placeholder="Enter Phone Number" required>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                NID:
+            </td>
+            <td>
+                <input type="text" ng-model="NID" placeholder="Enter NID Number" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Address:
+            </td>
+            <td>
+                <input type="text" ng-model="Address" placeholder="Enter Address" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Gender:
+            </td>
+            <td>
+                <input type="radio" ng-model="Gender" name="Gender" required value="Male">Male
+                <input type="radio" ng-model="Gender" name="Gender" required value="Female">Female
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td align="right">
+               <br><input type="submit" value="Signup">
+            </td>
+        </tr>
+    </table>  
+
+</form>

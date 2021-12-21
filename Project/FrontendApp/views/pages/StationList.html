@@ -1,0 +1,19 @@
+<div>
+    <h3>Stations</h3>
+  
+      <table align="center" border="1">
+        <tr>
+          <th>Sl No</th>
+          <th>Station Code</th>
+          <th>Station Name</th>
+          <th>Station Master</th>
+          
+          
+        </tr>
+        <tr ng-repeat="p in StationList">
+            <td>{{p.Route_ID}}</td>
+            <td>{{p.Route_Code}}</td>
+            <td>{{p.Route_Name}}</td>
+            <td>{{p.SM_Name}}</td>
+        </tr>
+      </table>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="API_MASModelStoreContainer" CdmEntityContainer="API_MASEntities">
+    <EntitySetMapping Name="EM_Info">
+      <EntityTypeMapping TypeName="API_MASModel.EM_Info">
+        <MappingFragment StoreEntitySet="EM_Info">
+          <ScalarProperty Name="Message_ID" ColumnName="Message_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Msg_Type" ColumnName="Msg_Type" />
+          <ScalarProperty Name="Station_Name" ColumnName="Station_Name" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fair_Chart">
+      <EntityTypeMapping TypeName="API_MASModel.Fair_Chart">
+        <MappingFragment StoreEntitySet="Fair_Chart">
+          <ScalarProperty Name="Fair_ID" ColumnName="Fair_ID" />
+          <ScalarProperty Name="Route_ID" ColumnName="Route_ID" />
+          <ScalarProperty Name="Station_Name" ColumnName="Station_Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Info">
+      <EntityTypeMapping TypeName="API_MASModel.Payment_Info">
+        <MappingFragment StoreEntitySet="Payment_Info">
+          <ScalarProperty Name="Payment_ID" ColumnName="Payment_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Tkt_ID" ColumnName="Tkt_ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Payment_Type" ColumnName="Payment_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pending_Tickets">
+      <EntityTypeMapping TypeName="API_MASModel.Pending_Tickets">
+        <MappingFragment StoreEntitySet="Pending_Tickets">
+          <ScalarProperty Name="Tkt_ID" ColumnName="Tkt_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Start_Station" ColumnName="Start_Station" />
+          <ScalarProperty Name="End_Station" ColumnName="End_Station" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Train_Name" ColumnName="Train_Name" />
+          <ScalarProperty Name="Psn_Num" ColumnName="Psn_Num" />
+          <ScalarProperty Name="Psn_Type" ColumnName="Psn_Type" />
+          <ScalarProperty Name="Coach_Type" ColumnName="Coach_Type" />
+          <ScalarProperty Name="Coach_Num" ColumnName="Coach_Num" />
+          <ScalarProperty Name="Sit_01" ColumnName="Sit_01" />
+          <ScalarProperty Name="Sit_02" ColumnName="Sit_02" />
+          <ScalarProperty Name="Sit_03" ColumnName="Sit_03" />
+          <ScalarProperty Name="Sit_04" ColumnName="Sit_04" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Route_List">
+      <EntityTypeMapping TypeName="API_MASModel.Route_List">
+        <MappingFragment StoreEntitySet="Route_List">
+          <ScalarProperty Name="Route_ID" ColumnName="Route_ID" />
+          <ScalarProperty Name="Route_Name" ColumnName="Route_Name" />
+          <ScalarProperty Name="Route_Code" ColumnName="Route_Code" />
+          <ScalarProperty Name="SM_Name" ColumnName="SM_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salary_Info">
+      <EntityTypeMapping TypeName="API_MASModel.Salary_Info">
+        <MappingFragment StoreEntitySet="Salary_Info">
+          <ScalarProperty Name="Salary_ID" ColumnName="Salary_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokens">
+      <EntityTypeMapping TypeName="API_MASModel.Token">
+        <MappingFragment StoreEntitySet="Token">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="AccessToken" ColumnName="AccessToken" />
+          <ScalarProperty Name="CreatAt" ColumnName="CreatAt" />
+          <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Token_Info">
+      <EntityTypeMapping TypeName="API_MASModel.Token_Info">
+        <MappingFragment StoreEntitySet="Token_Info">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Train_List">
+      <EntityTypeMapping TypeName="API_MASModel.Train_List">
+        <MappingFragment StoreEntitySet="Train_List">
+          <ScalarProperty Name="Train_ID" ColumnName="Train_ID" />
+          <ScalarProperty Name="Train_Name" ColumnName="Train_Name" />
+          <ScalarProperty Name="Start_Station" ColumnName="Start_Station" />
+          <ScalarProperty Name="End_Station" ColumnName="End_Station" />
+          <ScalarProperty Name="Train_Master" ColumnName="Train_Master" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Train_Schedule">
+      <EntityTypeMapping TypeName="API_MASModel.Train_Schedule">
+        <MappingFragment StoreEntitySet="Train_Schedule">
+          <ScalarProperty Name="Schedule_ID" ColumnName="Schedule_ID" />
+          <ScalarProperty Name="Route_ID" ColumnName="Route_ID" />
+          <ScalarProperty Name="Route_Name" ColumnName="Route_Name" />
+          <ScalarProperty Name="Train_ID" ColumnName="Train_ID" />
+          <ScalarProperty Name="Train_Name" ColumnName="Train_Name" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Info">
+      <EntityTypeMapping TypeName="API_MASModel.User_Info">
+        <MappingFragment StoreEntitySet="User_Info">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="NID" ColumnName="NID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Tickets">
+      <EntityTypeMapping TypeName="API_MASModel.Purchase_Tickets">
+        <MappingFragment StoreEntitySet="Purchase_Tickets">
+          <ScalarProperty Name="Tkt_ID" ColumnName="Tkt_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Start_Station" ColumnName="Start_Station" />
+          <ScalarProperty Name="End_Station" ColumnName="End_Station" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Train_Name" ColumnName="Train_Name" />
+          <ScalarProperty Name="Coach_Number" ColumnName="Coach_Number" />
+          <ScalarProperty Name="Sit_01" ColumnName="Sit_01" />
+          <ScalarProperty Name="Sit_02" ColumnName="Sit_02" />
+          <ScalarProperty Name="Sit_03" ColumnName="Sit_03" />
+          <ScalarProperty Name="Sit_04" ColumnName="Sit_04" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

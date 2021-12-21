@@ -1,0 +1,78 @@
+<h3>Profile</h3>
+
+<form ng-submit="Update()">
+    <table align="center">
+        <tr>
+            <td align="right">
+                Name:
+            </td>
+            <td>
+                <input type="text" ng-model="Home.Name" value={{Home.Name}}>
+                <input type="hidden" ng-model="User_ID">
+                <!-- <input type="text" value={{Home.Name}}> -->
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Email:
+            </td>
+            <td>
+                <input type="email" ng-model="Home.Email" value={{Home.Email}}>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Password:
+            </td>
+            <td>
+                <input type="password" ng-model="Home.Password" value={{Home.Password}} required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Phone:
+            </td>
+            <td>
+                <input type="text" ng-model="Home.Phone" value={{Home.Phone}} required>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                NID:
+            </td>
+            <td>
+                <input type="text" ng-model="Home.NID" readonly required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Address:
+            </td>
+            <td>
+                <input type="text" ng-model="Home.Address" value={{Home.Address}} required>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                Gender:
+            </td>
+            <td>
+                <input type="radio" ng-model="Home.Gender" name="Gender" required value="Male">Male
+                <input type="radio" ng-model="Home.Gender" name="Gender" required value="Female">Female
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td align="right">
+               <br><input type="submit" value="Update">
+            </td>
+        </tr>
+    </table>  
+
+</form>

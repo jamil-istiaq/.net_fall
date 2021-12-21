@@ -1,0 +1,20 @@
+<div>
+  <h3>Complete Project</h3>
+
+    <table border="1">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>State</th>
+        <th>Type</th>
+        <th>Duration</th>
+      </tr>
+      <tr ng-repeat="p in ComProjects">
+          <td>{{p.Proj_Id}}</td>
+          <td>{{p.Name}}</td>
+          <td>{{p.State}}</td>
+          <td>{{p.Type}}</td>
+          <td>{{p.Duaration}}</td>
+      </tr>
+    </table>
+</div>

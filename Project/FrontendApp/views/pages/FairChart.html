@@ -1,0 +1,17 @@
+<div>
+    <h3>Fair Chart</h3>
+  
+      <table align="center" border="1">
+        <tr>
+          <th>Sl No</th>
+          <th>Station Name</th>
+          <th>Cost</th>
+          
+          
+        </tr>
+        <tr ng-repeat="p in FairChart">
+            <td>{{p.Route_ID}}</td>
+            <td>{{p.Station_Name}}</td>
+            <td>{{p.Cost}}</td>
+        </tr>
+      </table>

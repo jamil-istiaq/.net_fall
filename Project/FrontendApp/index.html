@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" >
+  <head>
+    <!--<base href="/" />-->
+    <meta charset="utf-8">
+    <script src="app/lib/angular.min.js"></script>
+    
+    <script src="app/lib/angular.route.min.js"></script>
+    <script src="app/app.js"></script>
+    
+    <title>Welcom to Project</title>
+  </head>
+  <body ng-app="myApp">
+    <div ng-include="'views/inc/top_nav.html'"></div>
+    <!-- <div ng-include="'views/inc/side_nav.html'"></div> -->
+    <div ng-view> </div>
+  </body>
+</html>
+
+<!-- Add Services here -->
+<script src="app/services/ajax.js"></script>
+<script src="app/services/interCeptor.js"></script>
+
+<!-- Add Controllers here -->
+<script src="app/controllers/Login.js"></script>
+<script src="app/controllers/Signup.js"></script>
+<script src="app/controllers/Home.js"></script>
+<script src="app/controllers/PendingTicket.js"></script>
+<script src="app/controllers/Purchase.js"></script>
+<script src="app/controllers/Logout.js"></script>
+<script src="app/controllers/Update.js"></script>
+<script src="app/controllers/FairChart.js"></script>
+<script src="app/controllers/TrainList.js"></script>
+<script src="app/controllers/StationList.js"></script>
+

@@ -1,0 +1,18 @@
+<div>
+    <h3>Members</h3>
+  
+      <table border="1">
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Credit</th>
+          
+        </tr>
+        <tr ng-repeat="p in Member">
+            <td>{{p.User_Id}}</td>
+            <td>{{p.Name}}</td>
+            <td>{{p.Dept}}</td>
+            <td>{{p.Credit}}</td>
+        </tr>
+      </table>

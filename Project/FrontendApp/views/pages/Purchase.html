@@ -1,0 +1,151 @@
+<h3>Purchase</h3>
+
+<form ng-submit="submit()">
+    <table align="center">
+        <tr>
+            <td>
+                Time
+            </td>
+            <td>
+                <select ng-model="Time" >
+                    <option>07:00 AM</option>
+                    <option>08:00 AM</option>
+                    <option>09:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>01:00 PM</option>
+                    <option>02:00 PM</option>
+                    <option>03:00 PM</option>
+                    <option>04:00 PM</option>
+                    <option>05:00 PM</option>
+                    <option>06:00 PM</option>
+                    <option>07:00 PM</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Select Date
+            </td>
+            <td>
+                <input type="date" ng-model="Date" >
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Station to Start Jounrey
+            </td>
+            <td>
+                <select >
+                    <option ng-repeat="p in Purchase">
+                        {{p.Start_Station}}
+                    </option>
+                </select>
+            </td>
+        <tr>
+            <td>
+                Station to End Jounrey
+            </td>
+            <td>
+                <select >
+                    <option ng-repeat="p in Purchase">
+                        {{p.End_Station}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Select Train
+            </td>
+            <td>
+                <select ng-repeat= "s in Train">
+                    <option>{{s.Train}}</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Select Coach Numner
+            </td>
+            <td>
+                <select ng-model="Coach">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Select Sit Numner 01
+            </td>
+            <td>
+                <select ng-model="Coach">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Select Sit Numner 02
+            </td>
+            <td>
+                <select ng-model="Coach">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Select Sit Numner 03
+            </td>
+            <td>
+                <select ng-model="Coach">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Select Sit Numner 04
+            </td>
+            <td>
+                <select ng-model="Coach">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Purchase">
+            </td>
+        </tr>
+
+    </table>

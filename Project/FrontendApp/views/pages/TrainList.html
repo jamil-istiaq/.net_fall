@@ -1,0 +1,17 @@
+<div>
+    <h3>Train List</h3>
+  
+      <table align="center" border="1">
+        <tr>
+          <th>Sl No</th>
+          <th>Train Name</th>
+          <th>Train Master</th>
+          
+          
+        </tr>
+        <tr ng-repeat="p in TrainList">
+            <td>{{p.Train_ID}}</td>
+            <td>{{p.Train_Name}}</td>
+            <td>{{p.Train_Master}}</td>
+        </tr>
+      </table>
